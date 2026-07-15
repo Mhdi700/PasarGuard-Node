@@ -6,6 +6,8 @@ ARG TARGETARCH
 
 RUN apk update && apk add --no-cache make git openssl
 
+ENV GOTOOLCHAIN=auto
+
 WORKDIR /src
 RUN git clone --depth 1 https://github.com/PasarGuard/node.git .
 RUN go mod download
